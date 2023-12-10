@@ -30,8 +30,13 @@ loaded_model = torch.load("model.pt")
 # Running inference with the loaded model (using a dummy tensor)
 dummy_input = magic.torch_tensor([1, 2, 3])
 result = magic.run_inference(model=loaded_model, input_tensor=dummy_input)
+sm = magic.torch_softmax(dummy_input)
+print(sm)
 print("\nInference result with dummy model:")
 print(result)
 
 # Displaying result in dictionary format
 magic.display_result_dict({"result": result.tolist()})
+
+magic.print_cow_ascii()
+
